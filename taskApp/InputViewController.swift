@@ -15,8 +15,11 @@ class InputViewController: UIViewController {
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var dataPicker: UIDatePicker!
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var addCategory: UIButton!
+    @IBOutlet weak var categoryPicker: UIPickerView!
     
     var task: Task!
+    var categories: Category!
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -52,6 +55,8 @@ class InputViewController: UIViewController {
         setNotification(task: task)
         super.viewWillDisappear(animated)
     }
+    
+    
     
     // タスクのローカル通知を登録する
     func setNotification(task: Task) {

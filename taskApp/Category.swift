@@ -10,20 +10,7 @@ import RealmSwift
 
 class Category: Object {
     @objc dynamic var id = 0
-    
     @objc dynamic var name = ""
+    
+    let tasks = LinkingObjects(fromType: Task.self, property: "category")
 }
-
-
-////Realmの基本クラスである Object を継承して、Task クラスを作成
-//class Task: Object {
-//    @objc dynamic var id = 0
-//
-//    @objc dynamic var title = ""
-//    @objc dynamic var contents = ""
-//    @objc dynamic var date = Date()
-//
-//    override static func primaryKey() -> String? {
-//        return "id"
-//    }
-//}

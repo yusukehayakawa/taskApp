@@ -17,6 +17,7 @@ class Task: Object {
     @objc dynamic var title = ""
     @objc dynamic var contents = ""
     @objc dynamic var date = Date()
+    @objc dynamic var category: Category?
     
     override static func primaryKey() -> String? {
         return "id"
