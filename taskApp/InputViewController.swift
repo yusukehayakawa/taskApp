@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class InputViewController: UIViewController {
+class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var dataPicker: UIDatePicker!
@@ -19,11 +19,14 @@ class InputViewController: UIViewController {
     @IBOutlet weak var categoryPicker: UIPickerView!
     
     var task: Task!
-    var categories: Category!
     let realm = try! Realm()
+    var categories = try! Realm().objects(Category.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        categoryPicker.delegate = self
+        categoryPicker.dataSource = self
         
         // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -54,6 +57,20 @@ class InputViewController: UIViewController {
         }
         setNotification(task: task)
         super.viewWillDisappear(animated)
+    }
+    
+    // UIPickerViewの列の数
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    // UIPickerViewの行数、リストの数
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    
+//    ＋->追加画面へ
+//        performSegue(withIdentifier: "categorySegue", sender: nil)
+    @IBAction func addCategory(_ sender: Any) {
     }
     
     

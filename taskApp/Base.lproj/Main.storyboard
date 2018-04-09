@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1209" y="121"/>
         </scene>
         <!--Input View Controller-->
         <scene sceneID="2rY-tG-2AM">
@@ -135,17 +135,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnW-Rn-UMd">
-                                <rect key="frame" x="327" y="433" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnW-Rn-UMd">
+                                <rect key="frame" x="325" y="435" width="30" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="＋"/>
                                 <connections>
                                     <action selector="addCategory:" destination="Qnl-4Q-BIH" eventType="touchUpInside" id="Tk9-2D-Cdf"/>
-                                    <segue destination="8db-nM-maw" kind="show" id="xKF-9i-I6U"/>
+                                    <action selector="addCategory:" destination="qKS-4x-pUd" eventType="touchUpInside" id="kpY-f9-fOg"/>
+                                    <segue destination="8db-nM-maw" kind="show" id="R0n-6P-GVw"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kph-gJ-CoL">
-                                <rect key="frame" x="10" y="466" width="355" height="120"/>
+                                <rect key="frame" x="10" y="486" width="355" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="qdv-2P-UX6"/>
                                 </constraints>
@@ -161,12 +162,13 @@
                             <constraint firstItem="Xw4-k1-Vw3" firstAttribute="trailing" secondItem="Kph-gJ-CoL" secondAttribute="trailing" constant="10" id="Iul-5g-bHw"/>
                             <constraint firstItem="bgs-4A-la8" firstAttribute="top" secondItem="Xw4-k1-Vw3" secondAttribute="top" constant="10" id="XGq-Ql-7xE"/>
                             <constraint firstItem="gKi-hW-Igh" firstAttribute="leading" secondItem="Xw4-k1-Vw3" secondAttribute="leading" constant="10" id="Xqb-64-vOf"/>
+                            <constraint firstAttribute="trailing" secondItem="lnW-Rn-UMd" secondAttribute="trailing" constant="20" id="ZUZ-tQ-u1S"/>
                             <constraint firstItem="Xw4-k1-Vw3" firstAttribute="trailing" secondItem="ycn-Zh-DtM" secondAttribute="trailing" constant="10" id="ZvH-Zb-jKk"/>
                             <constraint firstItem="w4y-5i-cYv" firstAttribute="leading" secondItem="Xw4-k1-Vw3" secondAttribute="leading" constant="10" id="bSo-8R-hVd"/>
                             <constraint firstItem="Bkn-wY-i3t" firstAttribute="leading" secondItem="Xw4-k1-Vw3" secondAttribute="leading" id="e2f-dV-IJA"/>
+                            <constraint firstItem="lnW-Rn-UMd" firstAttribute="top" secondItem="Bkn-wY-i3t" secondAttribute="bottom" constant="10" id="jcy-gl-y3r"/>
                             <constraint firstItem="gKi-hW-Igh" firstAttribute="top" secondItem="w4y-5i-cYv" secondAttribute="bottom" constant="10" id="kik-Lx-nNJ"/>
-                            <constraint firstItem="lnW-Rn-UMd" firstAttribute="trailing" secondItem="Xw4-k1-Vw3" secondAttribute="trailing" constant="10" id="or0-y3-reV"/>
-                            <constraint firstItem="Kph-gJ-CoL" firstAttribute="top" secondItem="6tt-n9-C9W" secondAttribute="bottom" constant="10" id="poo-dG-f8E"/>
+                            <constraint firstItem="Kph-gJ-CoL" firstAttribute="top" secondItem="6tt-n9-C9W" secondAttribute="bottom" constant="30" id="poo-dG-f8E"/>
                             <constraint firstItem="Bkn-wY-i3t" firstAttribute="top" secondItem="gKi-hW-Igh" secondAttribute="bottom" constant="10" id="rci-EG-nz1"/>
                             <constraint firstItem="ycn-Zh-DtM" firstAttribute="top" secondItem="bgs-4A-la8" secondAttribute="bottom" constant="10" id="saO-Zg-e6c"/>
                             <constraint firstItem="6tt-n9-C9W" firstAttribute="leading" secondItem="Xw4-k1-Vw3" secondAttribute="leading" constant="10" id="snC-YX-gQp"/>
@@ -189,7 +191,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fp5-dQ-iTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qnl-4Q-BIH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1768.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1932" y="121"/>
         </scene>
         <!--Add Category View Controller-->
         <scene sceneID="ymz-st-5Cb">
@@ -216,7 +218,7 @@
                                 <color key="backgroundColor" red="0.63369245072693792" green="0.97680455450000003" blue="0.42980707745252217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hOW-rs-j0B"/>
-                                    <constraint firstAttribute="width" constant="120" id="zwG-2D-Uy5"/>
+                                    <constraint firstAttribute="width" constant="120" id="pKm-X5-h7E"/>
                                 </constraints>
                                 <state key="normal" title="保存">
                                     <color key="titleColor" red="0.88167908031088082" green="0.055969233701929751" blue="0.14891339707477921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -227,7 +229,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="saveCategory:" destination="8db-nM-maw" eventType="touchUpInside" id="0O0-5I-PwN"/>
+                                    <action selector="saveCategory:" destination="8db-nM-maw" eventType="touchUpInside" id="n28-ic-abd"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-NV-rrQ">
@@ -255,13 +257,13 @@
                     </view>
                     <connections>
                         <outlet property="categoryPicker" destination="q3p-NV-rrQ" id="lmi-vz-m7J"/>
+                        <outlet property="categoryTextField" destination="Y4W-di-Vuz" id="7iC-Pz-RVV"/>
                         <outlet property="saveButton" destination="8MN-Ui-QhE" id="ucX-C7-Z8T"/>
-                        <outlet property="textField" destination="Y4W-di-Vuz" id="2Wj-Cb-z1M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjv-dh-zk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2437.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2641" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Psj-zj-LZI">

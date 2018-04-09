@@ -9,30 +9,40 @@
 import UIKit
 import RealmSwift
 
-class addCategoryViewController: UIViewController {
-
-    @IBOutlet weak var textField: UITextField!
+class addCategoryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var categoryPicker: UIPickerView!
     
     let realm = try! Realm()
-    var category: Category!
+    var category = Category()
+    var categories = try! Realm().objects(Category.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.text = category.name
-        var categories = realm.objects(Category.self)
+        categoryPicker.delegate = self
+        categoryPicker.dataSource = self
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    // UIPickerViewの列の数
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+     // UIPickerViewの行数、リストの数
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
     
-//    保存ボタンを押したら新しいカテゴリーが保存される
+    //    保存ボタンを押したら新しいカテゴリーが保存される
     @IBAction func saveCategory(_ sender: Any) {
         try! realm.write {
-            self.category.name = self.textField.text!
+            print(category)
+            self.category.name = self.categoryTextField.text!
             self.realm.add(self.category, update: true)
         }
         super.viewDidLoad()
